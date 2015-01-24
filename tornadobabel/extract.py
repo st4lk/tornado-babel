@@ -117,7 +117,7 @@ def extract_tornado(fileobj, keywords, comment_tags, options):
 
     for node in walk(template.file):
         if isinstance(node, _Expression):
-            for lineno, func, message in extract_from_node(node):
+            for lineno, func, message in extract_from_node(node, keywords):
                 # TODO: Implement the comment feature, right now an empty 
                 # iterable is returned
                 yield lineno, func, message, []

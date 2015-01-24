@@ -68,6 +68,20 @@ class TestExtract(unittest.TestCase):
         self.assertEqual(string[1], '_')  # Function name
         self.assertEqual(string[2], "Test String")  # Translatable string
 
+    def test_custom_keyword_extract(self):
+        template = StringIO("""
+        {{ _C("Test String") }}
+        {{ something }}
+        {% block something %}{% end %}
+        """)
+        strings = list(extract_tornado(template, ('_C', ), None, {}))
+        self.assertEqual(len(strings), 1)
+
+        # Ensure that the string is correct
+        string, = strings
+        self.assertEqual(string[0], 2)  # Line number
+        self.assertEqual(string[1], '_C')  # Custom function name
+        self.assertEqual(string[2], "Test String")  # Translatable string
 
 if __name__ == "__main__":
     unittest.main()
