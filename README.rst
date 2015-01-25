@@ -20,7 +20,7 @@ strings from tornado templates.
 Resources
 ---------
 
-* `Documentation <http://tornado-babel.readthedocs.org/en/latest/index.html>`_
+* `Documentation <https://readthedocs.org/projects/tornado-babel/>`_
 * `Bug Tracker <https://github.com/openlabs/tornado-babel/issues>`_
 * `Source Code <https://github.com/openlabs/tornado-babel>`_
 * `About Openlabs <http://openlabs.co.in>`_
