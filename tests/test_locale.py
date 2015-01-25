@@ -13,7 +13,6 @@ import unittest
 from tornado import web
 from tornado import testing
 from tornadobabel import locale
-from tornadobabel.mixin import TornadoBabelMixin
 
 
 class IndexHandler(web.RequestHandler):
@@ -21,7 +20,7 @@ class IndexHandler(web.RequestHandler):
         self.render('index.html')
 
 
-class Indexi18nHandler(TornadoBabelMixin, web.RequestHandler):
+class Indexi18nHandler(web.RequestHandler):
     def get_user_locale(self):
         """
         This locale handler is a bit old fashioned and picks up locale from

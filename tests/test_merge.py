@@ -14,10 +14,9 @@ import unittest
 from tornado import web
 from tornado import testing
 from tornadobabel import locale
-from tornadobabel.mixin import TornadoBabelMixin
 
 
-class TestHandler(TornadoBabelMixin, web.RequestHandler):
+class TestHandler(web.RequestHandler):
     def get_user_locale(self):
         """
         This locale handler is a bit old fashioned and picks up locale from
